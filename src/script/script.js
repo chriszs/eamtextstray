@@ -64,24 +64,27 @@ var app = {
 
         if ('lastPosition' in data) {
             var p = parseInt(data.lastPosition);
-            // if (p !== p) {
-                app.last = p;
-            //}
+            
+            app.last = p;
 
             data.i.forEach(function (item) {
+
                 var text = decodeURIComponent(item.d);
+
                 for (var i = 0; i < text.length; i++) {
-                    switch (text.charCodeAt(i)) {
-                    case 8:
+
+                    var code = text.charCodeAt(i);
+
+                    if (code == 8) {
                         app.removeText();
-                        break;
-                    case 10:
+                    }
+                    else if (code == 10) {
                         app.addNewLine();
-                        break;
-                    case 13:
+                    }
+                    else if (code == 13) {
                         app.addText(' ');
-                        break;
-                    default:
+                    }
+                    else {
                         app.addText(text.charAt(i));
                     }
                 }
