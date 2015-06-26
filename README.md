@@ -7,4 +7,4 @@ npm install
 npm start
 ```
 
-Open demo running continuously [here](http://localhost:5000/#IHaveADream).
+Then open the demo running continuously [here](http://localhost:5000/#IHaveADream).
